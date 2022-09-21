@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/dao/ClienteDAO.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/impl/ClienteDaoJDBC.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/web/index.html</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/db/DbException.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/db/DbIntegrityException.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/db/db.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/model/Cliente.java</file>
-            <file>file:/C:/Users/325597/Documents/NetBeansProjects/avaliacao1/src/java/factory/DaoFactory.java</file>
+            <file>file:/H:/workspace/netbeans/avaliacao1/src/java/factory/DaoFactory.java</file>
+            <file>file:/H:/workspace/netbeans/avaliacao1/src/java/impl/ClienteDaoJDBC.java</file>
+            <file>file:/H:/workspace/netbeans/avaliacao1/src/java/model/Cliente.java</file>
         </group>
     </open-files>
 </project-private>
