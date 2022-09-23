@@ -15,31 +15,6 @@ public class ClienteDAO {
     PreparedStatement ps;
     ResultSet rs;
     String sql;
-
-    public ArrayList<Cliente> getLista() throws SQLException {
-        ArrayList<Cliente> lista = new ArrayList<>();
-        sql = "SELECT * FROM cliente";
-        con = ConexaoFactory.conectar();
-        ps = con.prepareStatement(sql);
-        rs = ps.executeQuery();
-
-        while (rs.next()) {
-            Cliente cli = new Cliente();
-            cli.setIdClinte(rs.getInt("idCliente"));
-            cli.setNome(rs.getString("nome"));
-            cli.setCpf(rs.getString("cpf"));
-            cli.setEndereco(rs.getString("endereco"));
-            cli.setEmail(rs.getString("email"));
-            cli.setTelefone(rs.getString("telefone"));
-            cli.setStatus(rs.getInt("status"));
-            cli.setDataCadastro(rs.getDate("dataCadastro"));
-
-            lista.add(cli);
-        }
-        ConexaoFactory.close(con);
-        return lista;
-    }
-    
     
     public boolean gravar(Cliente cli) throws SQLException{
         con = ConexaoFactory.conectar();
@@ -77,4 +52,57 @@ public class ClienteDAO {
             
             return true;
     }
+    
+    
+    public ArrayList<Cliente> getAllClientes() throws SQLException {
+        ArrayList<Cliente> lista = new ArrayList<>();
+        sql = "SELECT * FROM cliente";
+        con = ConexaoFactory.conectar();
+        ps = con.prepareStatement(sql);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Cliente cli = new Cliente();
+            cli.setIdClinte(rs.getInt("idCliente"));
+            cli.setNome(rs.getString("nome"));
+            cli.setCpf(rs.getString("cpf"));
+            cli.setEndereco(rs.getString("endereco"));
+            cli.setEmail(rs.getString("email"));
+            cli.setTelefone(rs.getString("telefone"));
+            cli.setStatus(rs.getInt("status"));
+            cli.setDataCadastro(rs.getDate("dataCadastro"));
+
+            lista.add(cli);
+        }
+        ConexaoFactory.close(con);
+        return lista;
+    }
+    
+    
+    
+    public Cliente getClientePorId(int idCliente) throws SQLException{
+        Cliente cli = new Cliente();
+        sql = "SELECT nome, cpf, endereco, email, telefone, status, dataCadastro "
+            + "FROM cliente WHERE idCliente = ?";
+        
+        con = ConexaoFactory.conectar();
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, idCliente);
+        rs = ps.executeQuery();
+        
+        if(rs.next()){
+            cli.setNome(rs.getString("nome"));
+            cli.setCpf(rs.getString("cpf"));
+            cli.setEndereco(rs.getString("endereco"));
+            cli.setEmail(rs.getString("email"));
+            cli.setTelefone(rs.getString("telefone"));
+            cli.setStatus(rs.getInt("status"));
+            cli.setDataCadastro(rs.getDate("dataCadastro"));
+            
+        }
+            ConexaoFactory.close(con);
+            return cli;
+        
+    }
+  
 }
