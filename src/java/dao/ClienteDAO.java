@@ -105,4 +105,29 @@ public class ClienteDAO {
         
     }
   
+    
+    public boolean ativar(Cliente cli) throws SQLException{
+        sql = "UPDATE cliente SET status = 1 "
+            + "WHERE idCliente = ?";
+        
+        con = ConexaoFactory.conectar();
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, cli.getIdClinte());
+        ps.executeUpdate();
+        ConexaoFactory.close(con);
+        return true;
+    }
+    
+    public boolean desativar(Cliente cli) throws SQLException{
+        sql = "UPDATE cliente SET status = 0 "
+            + "WHERE idCliente = ?";
+        
+        con = ConexaoFactory.conectar();
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, cli.getIdClinte());
+        ps.executeUpdate();
+        
+        ConexaoFactory.close(con);
+        return true;
+    }
 }
