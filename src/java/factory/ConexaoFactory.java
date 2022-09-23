@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 public class ConexaoFactory {
     private static final String URL = 
-            "jdbc:mysql://localhost:3306/projetoetb2sem?useTimeZone=true&serverTimeZone=UTC&useSSL=false";
+            "jdbc:mysql://localhost:3306/projetoetb?useTimeZone=true&serverTimeZone=UTC&useSSL=false";
     private static final String USUARIO = "root";
     private static final String SENHA = "";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     
-    public static Connection conexao() throws SQLException {
+    public static Connection conectar() throws SQLException {
         Connection conexao = null;
         
         try{

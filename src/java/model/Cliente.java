@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Cliente {
 
-    private Long idClinte;
+    private Integer idClinte;
     private String nome;
     private String cpf;
     private String endereco;
@@ -13,7 +13,7 @@ public class Cliente {
     private Integer status;
     private Date dataCadastro;
 
-    public Cliente(Long idClinte, String nome, String cpf, String endereco, String email, String telefone, Integer status, Date dataCadastro) {
+    public Cliente(Integer idClinte, String nome, String cpf, String endereco, String email, String telefone, Integer status, Date dataCadastro) {
         this.idClinte = idClinte;
         this.nome = nome;
         this.cpf = cpf;
@@ -24,13 +24,17 @@ public class Cliente {
         this.dataCadastro = dataCadastro;
     }
 
+    public Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
-    public Long getIdClinte() {
+    public Integer getIdClinte() {
         return idClinte;
     }
 
-    public void setIdClinte(Long idClinte) {
+    public void setIdClinte(Integer idClinte) {
         this.idClinte = idClinte;
     }
 
