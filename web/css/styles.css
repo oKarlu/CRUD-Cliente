@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 de ago de 2022, 06:42:39
+    Author     : ltp3etb
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    background: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    font-size: 16px;
+    text-align: left;
+    clear:both;
+}
+
+.bg-background{
+    position:relative;
+    background-image: url('../imagens/greybackground2.png');
+    background-position: center;
+    background-size:cover;
+    width: 100%;
+    height:100%;
+}
+
+#container{
+    margin: 0 auto;
+    width: 1024px;
+    height: 768px;
+}
+
+#header{
+    width: 100%;
+    height: 80px;
+}
+
+#menu{
+    width: 100%;
+    height: 80px;
+}
+
+#conteudo{
+    width: 100%;
+    height: 600px;
+    float: left;
+}
+
