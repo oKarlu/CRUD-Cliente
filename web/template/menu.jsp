@@ -19,7 +19,7 @@
                     <a class="nav-link" href="gerenciarUsuario?acao=listar">Usuários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clientes</a>
+                    <a class="nav-link" href="gerenciarCliente?acao=listar">Clientes</a>
                 </li>
                 
             </ul>

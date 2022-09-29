@@ -14,14 +14,13 @@ public class ClienteDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    String sql;
+    String sql = "";
     
     public boolean gravar(Cliente cli) throws SQLException{
         con = ConexaoFactory.conectar();
         
         if(cli.getIdCliente() == 0){
-            sql = "INSERT INTO cliente "
-                + "(nome, cpf, endereco, email, telefone, status, dataCadastro)"
+            sql = "INSERT INTO cliente(nome, cpf, endereco, email, telefone, dataCadastro, status)"
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, cli.getNome());
@@ -29,8 +28,9 @@ public class ClienteDAO {
             ps.setString(3, cli.getEndereco());
             ps.setString(4, cli.getEmail());
             ps.setString(5, cli.getTelefone());
-            ps.setInt(6, cli.getStatus());
-            ps.setDate(7, (Date) cli.getDataCadastro());
+            ps.setDate(6, new Date(cli.getDataCadastro().getTime()));
+            ps.setInt(7, cli.getStatus());
+            
                     
         } else {
             sql  = "UPDATE cliente "
@@ -56,7 +56,7 @@ public class ClienteDAO {
     
     public ArrayList<Cliente> getAllClientes() throws SQLException {
         ArrayList<Cliente> lista = new ArrayList<>();
-        sql = "SELECT * FROM cliente";
+        sql = "SELECT idCliente, nome, cpf, endereco, email, telefone, dataCadastro, status FROM cliente";
         con = ConexaoFactory.conectar();
         ps = con.prepareStatement(sql);
         rs = ps.executeQuery();
@@ -69,8 +69,8 @@ public class ClienteDAO {
             cli.setEndereco(rs.getString("endereco"));
             cli.setEmail(rs.getString("email"));
             cli.setTelefone(rs.getString("telefone"));
-            cli.setStatus(rs.getInt("status"));
             cli.setDataCadastro(rs.getDate("dataCadastro"));
+            cli.setStatus(rs.getInt("status"));
 
             lista.add(cli);
         }
