@@ -30,11 +30,11 @@ public class Cliente {
 
     
 
-    public Integer getIdClinte() {
+    public Integer getIdCliente() {
         return idClinte;
     }
 
-    public void setIdClinte(Integer idClinte) {
+    public void setIdCliente(Integer idClinte) {
         this.idClinte = idClinte;
     }
 

@@ -19,7 +19,7 @@ public class ClienteDAO {
     public boolean gravar(Cliente cli) throws SQLException{
         con = ConexaoFactory.conectar();
         
-        if(cli.getIdClinte() == 0){
+        if(cli.getIdCliente() == 0){
             sql = "INSERT INTO cliente "
                 + "(nome, cpf, endereco, email, telefone, status, dataCadastro)"
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -45,7 +45,7 @@ public class ClienteDAO {
             ps.setString(5, cli.getTelefone());
             ps.setInt(6, cli.getStatus());
             ps.setDate(7, (Date) cli.getDataCadastro());
-            ps.setInt(8, cli.getIdClinte());
+            ps.setInt(8, cli.getIdCliente());
         }
             ps.executeQuery();
             ConexaoFactory.close(con);
@@ -63,7 +63,7 @@ public class ClienteDAO {
 
         while (rs.next()) {
             Cliente cli = new Cliente();
-            cli.setIdClinte(rs.getInt("idCliente"));
+            cli.setIdCliente(rs.getInt("idCliente"));
             cli.setNome(rs.getString("nome"));
             cli.setCpf(rs.getString("cpf"));
             cli.setEndereco(rs.getString("endereco"));
@@ -112,7 +112,7 @@ public class ClienteDAO {
         
         con = ConexaoFactory.conectar();
         ps = con.prepareStatement(sql);
-        ps.setInt(1, cli.getIdClinte());
+        ps.setInt(1, cli.getIdCliente());
         ps.executeUpdate();
         ConexaoFactory.close(con);
         return true;
@@ -124,7 +124,7 @@ public class ClienteDAO {
         
         con = ConexaoFactory.conectar();
         ps = con.prepareStatement(sql);
-        ps.setInt(1, cli.getIdClinte());
+        ps.setInt(1, cli.getIdCliente());
         ps.executeUpdate();
         
         ConexaoFactory.close(con);

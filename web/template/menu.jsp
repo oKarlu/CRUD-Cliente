@@ -21,9 +21,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Clientes</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
                 
             </ul>
          
