@@ -60,6 +60,10 @@
                                     <tr>
                                         <td>${cli.idCliente}</td>
                                         <td>${cli.nome}</td>
+                                        <td>${cli.cpf}</td>
+                                        <td>${cli.endereco}</td>
+                                        <td>${cli.email}</td>
+                                        <td>${cli.telefone}</td>
                                         <td>
                                             <fmt:formatDate pattern = "dd/MM/yyyy" value = "${cli.dataCadastro}" />
                                         </td>
@@ -91,15 +95,13 @@
                                                 }
                                             </script>
                                             <a href="gerenciarCliente?acao=alterar&idCliente=${cli.idCliente}"
-                                               class="btn btn-primary btn-sm" 
-                                               role="button">
-                                               Alterar&nbsp;
-                                               <i class="fa-solid fa-pen-to-square"></i>
+                                               class="btn btn-primary btn-sm" role="button">
+                                               Alterar&nbsp;<i class="fa-solid fa-pen-to-square"></i>
                                             </a>
                                             <c:choose>
                                                 <c:when test="${cli.status == 1}">
                                                     <button class="btn btn-danger btn-sm"
-                                                        onclick="confirmDesativar('${u.idCliente}','${cli.nome}')">
+                                                        onclick="confirmDesativar('${cli.idCliente}','${cli.nome}')">
                                                         Desativar&nbsp;
                                                         <i class="fas fa-user fa-user-lock"></i>
                                                     </button>

@@ -35,7 +35,7 @@ public class ClienteDAO {
         } else {
             sql  = "UPDATE cliente "
                     + "SET nome = ?, cpf = ?, endereco = ?, "
-                    + "email = ?, telefone = ?, status = ?, dataCadastro? = ?"
+                    + "email = ?, telefone = ?, status = ?, dataCadastro = ?"
                     + "WHERE idCliente = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, cli.getNome());
@@ -54,9 +54,9 @@ public class ClienteDAO {
     }
     
     
-    public ArrayList<Cliente> getAllClientes() throws SQLException {
-        ArrayList<Cliente> lista = new ArrayList<>();
-        sql = "SELECT idCliente, nome, cpf, endereco, email, telefone, dataCadastro, status FROM cliente";
+    public ArrayList<Cliente> getLista() throws SQLException {
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        sql = "SELECT * FROM cliente";
         con = ConexaoFactory.conectar();
         ps = con.prepareStatement(sql);
         rs = ps.executeQuery();
@@ -72,16 +72,16 @@ public class ClienteDAO {
             cli.setDataCadastro(rs.getDate("dataCadastro"));
             cli.setStatus(rs.getInt("status"));
 
-            lista.add(cli);
+            clientes.add(cli);
         }
         ConexaoFactory.close(con);
-        return lista;
+        return clientes;
     }
     
     
     
-    public Cliente getClientePorId(int idCliente) throws SQLException{
-        Cliente cli = new Cliente();
+    public Cliente getCarregarPorId(int idCliente) throws SQLException{
+        Cliente c = new Cliente();
         sql = "SELECT nome, cpf, endereco, email, telefone, status, dataCadastro "
             + "FROM cliente WHERE idCliente = ?";
         
@@ -91,17 +91,17 @@ public class ClienteDAO {
         rs = ps.executeQuery();
         
         if(rs.next()){
-            cli.setNome(rs.getString("nome"));
-            cli.setCpf(rs.getString("cpf"));
-            cli.setEndereco(rs.getString("endereco"));
-            cli.setEmail(rs.getString("email"));
-            cli.setTelefone(rs.getString("telefone"));
-            cli.setStatus(rs.getInt("status"));
-            cli.setDataCadastro(rs.getDate("dataCadastro"));
+            c.setNome(rs.getString("nome"));
+            c.setCpf(rs.getString("cpf"));
+            c.setEndereco(rs.getString("endereco"));
+            c.setEmail(rs.getString("email"));
+            c.setTelefone(rs.getString("telefone"));
+            c.setDataCadastro(rs.getDate("dataCadastro"));
+            c.setStatus(rs.getInt("status"));
             
         }
             ConexaoFactory.close(con);
-            return cli;
+            return c;
         
     }
   

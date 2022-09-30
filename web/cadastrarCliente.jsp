@@ -87,15 +87,6 @@
                             
                         </div>
                     </div>
-                    <div class="form-group row offset-md-3 mt-4">
-                        <label for="iddatacadastro" 
-                            class="col-md-1 form-label btn btn-primary btn-md">DataDeCadastro</label>
-                        <div class="col-md-6">
-                            <input type="text" name="dataCadastro" id="iddata" 
-                                   class="form-control" value="${cliente.dataCadastro}">
-                            
-                        </div>
-                    </div>
                     <div class="form-group row offset-md-3 mt-3">
                         <label for="idstatus" class="col-md-1 form-label btn btn-primary btn-md mt-2">Status</label>
                         <div class="col-md-6">
