@@ -20,14 +20,14 @@ header{
 }
 
 .navbar-brand{
-    font-weight: 800;
+    font-weight: 1000;
     text-transform: uppercase;
     font-size: 2em;
     color: #262626;
 }
 
 .nav-item{
-    font-weight: 800;
+    font-weight: 1000;
     text-transform: uppercase;
 }
 

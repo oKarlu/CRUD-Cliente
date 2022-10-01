@@ -31,7 +31,7 @@
                 <div class="h-100 justify-content-center align-items-center">
                     <div class="col-12">
                         <h3 class="text-center mt-3">Listagem de Clientes</h3>
-                        <div class="col-sm-12" style="padding-bottom: 15px">
+                        <div class="col-sm-12" style="padding-bottom: 20px">
                             <a href="cadastrarCliente.jsp"
                                 class="btn btn-primary btn-md"
                                 role="button">Cadastrar Cliente&nbsp;
