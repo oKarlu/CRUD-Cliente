@@ -127,6 +127,38 @@ public class GerenciarCliente extends HttpServlet {
                 c.setNome(nome);
             }
             
+            if(cpf.isEmpty() || cpf.equals("")){
+                request.setAttribute("msg", "Informe o cpf do cliente!");
+                despacharRequisicao(request, response);
+               
+            }else{
+                c.setCpf(cpf);
+            }
+            
+            if(endereco.isEmpty() || endereco.equals("")){
+                request.setAttribute("msg", "Informe o endereco do cliente!");
+                despacharRequisicao(request, response);
+               
+            }else{
+                c.setEndereco(endereco);
+            }
+            
+            if(email.isEmpty() || email.equals("")){
+                request.setAttribute("msg", "Informe o email do cliente!");
+                despacharRequisicao(request, response);
+               
+            }else{
+                c.setEmail(email);
+            }
+            
+            if(telefone.isEmpty() || telefone.equals("")){
+                request.setAttribute("msg", "Informe o telefone do cliente!");
+                despacharRequisicao(request, response);
+               
+            }else{
+                c.setTelefone(telefone);
+            }
+            
             if(dataCadastro.isEmpty() || dataCadastro.equals("")){
                 request.setAttribute("msg", "Informe a data do cadastro!");
                 despacharRequisicao(request, response);
@@ -142,13 +174,17 @@ public class GerenciarCliente extends HttpServlet {
             }
             
             if(cdao.gravar(c)){
-                mensagem = "Cliente salvo na base de dados";
+                mensagem = "Cliente gravado com sucesso na base de dados!";
+            }else{
+                mensagem = "Falha ao gravar o cliente na base de dados!";
             }
         } catch (ParseException pe) {
             mensagem = "Erro: " + pe.getMessage();
         } catch (SQLException e){
-            mensagem = "Erro: " + e.getMessage();
+           mensagem = "Erro: " + e.getMessage();
+           e.printStackTrace();
         }
+        
         
         out.println(
                 "<script type='text/javascript'>" +

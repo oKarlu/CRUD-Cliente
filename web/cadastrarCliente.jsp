@@ -51,6 +51,15 @@
                             
                         </div>
                     </div>
+                    <div class="form-group row offset-md-3 mt-4">
+                        <label for="idnome" 
+                               class="col-md-1 form-label btn btn-primary btn-md">Cpf</label>
+                        <div class="col-md-6">
+                            <input type="text" name="cpf" id="idcpf" 
+                                   class="form-control" value="${cliente.cpf}">
+                            
+                        </div>
+                    </div>
                     <div class="form-group row offset-md-2 mt-3">
                         <label for="iddata" 
                                class="col-md-2 form-label btn btn-primary btn-md">Data de Cadastro</label>

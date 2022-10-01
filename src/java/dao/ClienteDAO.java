@@ -47,7 +47,7 @@ public class ClienteDAO {
             ps.setDate(7, (Date) cli.getDataCadastro());
             ps.setInt(8, cli.getIdCliente());
         }
-            ps.executeQuery();
+            ps.executeUpdate();
             ConexaoFactory.close(con);
             
             return true;

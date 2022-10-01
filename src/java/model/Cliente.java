@@ -11,13 +11,13 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Cliente {
-    private Integer idCliente;
+    private int idCliente;
     private String nome;
     private String cpf;
     private String endereco;
     private String email;
     private String telefone;
-    private Integer status;
     private Date dataCadastro;
+    private int status;
     
 }
